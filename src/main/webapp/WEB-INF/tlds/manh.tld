@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE taglib  
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"  
+        "http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>m</short-name>
+	<uri>manh-tags</uri>
+	<description>A simple tab library for the examples</description>
+
+	<tag>
+		<name>currentDate</name>
+		<tag-class>poly.manhnd.assignment.tags.CurrentDateTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<name>ifWeekDay</name>
+		<tag-class>poly.manhnd.assignment.tags.IfWeekDayTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<tag>
+		<name>cart</name>
+		<tag-class>poly.manhnd.assignment.tags.CartTag</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<tag>
+		<name>paginate</name>
+		<tag-class>poly.manhnd.assignment.tags.pagination.PaginationTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>page</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<name>totalRecords</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<name>max</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<name>uri</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>showProduct</name>
+		<tag-class>poly.manhnd.assignment.tags.products.ShowProductTag</tag-class>
+		<body-content>jsp</body-content>
+		<attribute>
+			<name>maxResult</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+
+
+	<tag>
+		<name>setAttributeRecentPage</name>
+		<tag-class>poly.manhnd.assignment.tags.RecentPageTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>currentPage</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+
+	<tag>
+		<name>getManufacturers</name>
+		<tag-class>poly.manhnd.assignment.tags.ManufacturerTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<name>getCategories</name>
+		<tag-class>poly.manhnd.assignment.tags.CategoryTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+	<tag>
+		<name>getRamdomProducts</name>
+		<tag-class>poly.manhnd.assignment.tags.products.ProductRandomTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy ngẫu nhiên limit sản phẩm trong bảng sản phẩm (trả về
+			list ${randomProducts})</description>
+		<attribute>
+			<name>limit</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>getProductsByCategoryId</name>
+		<tag-class>poly.manhnd.assignment.tags.ListProductCategoryTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về tổng số sản phẩm theo categoryid
+			(pageContext =
+			products và sizeProducts(sizeBar) và totalProducts(pagination))</description>
+		<attribute>
+			<name>categoryId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<name>maxResult</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>getProductsByManufacturerId</name>
+		<tag-class>poly.manhnd.assignment.tags.ListProductManufacturerTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về tổng số sản phẩm theo manufacturerId
+			(pageContext =
+			products và sizeProducts(sizeBar) và totalProducts(pagination))
+		</description>
+		<attribute>
+			<name>manufacturerId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+		<attribute>
+			<name>maxResult</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<!-- Start Order Tags -->
+	<tag>
+		<name>getListOrderDetailByOrderID</name>
+		<tag-class>poly.manhnd.assignment.tags.orders.OrderDetailTag</tag-class>
+		<body-content>empty</body-content>
+		<description>trả về page attribute List[OrderDetails] and
+			Object[Order]</description>
+		<attribute>
+			<name>orderId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<name>getNumberOfWaitingOrder</name>
+		<tag-class>poly.manhnd.assignment.tags.orders.CountWaitingOrderTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Trả về tổng số order đang ở trạng thái đợi</description>
+	</tag>
+
+	<tag>
+		<name>getOrder</name>
+		<tag-class>poly.manhnd.assignment.tags.orders.OrderTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>Custom Tag có thân, nếu order có dữ liệu sẽ trả về
+			$totalRecords để sử dụng với pagination tag</description>
+		<attribute>
+			<name>maxResult</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>getOrderUser</name>
+		<tag-class>poly.manhnd.assignment.tags.orders.OrderUserTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>
+			Tạo bảng order trong profile.jsp. Attribute: Order,
+			OrderDetails, count
+		</description>
+		<attribute>
+			<name>user</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>poly.manhnd.assignment.entities.User</type>
+		</attribute>
+		<attribute>
+			<name>maxResult</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>getTotalOrderUser</name>
+		<tag-class>poly.manhnd.assignment.tags.orders.CountOrderUserTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Đếm số order của user</description>
+		<attribute>
+			<name>user</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>poly.manhnd.assignment.entities.User</type>
+		</attribute>
+	</tag>
+
+	<!-- End Order Tags -->
+
+
+	<!-- Start order detail tags -->
+	<tag>
+		<name>getOrderDetail</name>
+		<tag-class>poly.manhnd.assignment.tags.orderdetails.OrderDetailTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về chi tiết đơn hàng [detail]</description>
+	</tag>
+	<!-- End order detail tags -->
+
+	<!-- Start User Tags -->
+	<tag>
+		<name>getListUser</name>
+		<tag-class>poly.manhnd.assignment.tags.users.UserTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về list user từ database</description>
+		<attribute>
+			<name>maxResult</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+	<tag>
+		<name>getUser</name>
+		<tag-class>poly.manhnd.assignment.tags.users.UserModifyTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về user từ database với param id</description>
+	</tag>
+	<!-- End User Tags -->
+
+	<!-- Start Product tags -->
+	<tag>
+		<name>getListProduct</name>
+		<tag-class>poly.manhnd.assignment.tags.products.ProductTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về list-products từ database. Object User> pageContext[u]</description>
+		<attribute>
+			<name>maxResult</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>getProductInStock</name>
+		<tag-class>poly.manhnd.assignment.tags.products.ProductInStockTag</tag-class>
+		<body-content>empty</body-content>
+		<description>In ra số hàng trong kho của id truyền vào</description>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>getProductById</name>
+		<tag-class>poly.manhnd.assignment.tags.products.ShowProductByIdTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về đối tượng Product với id truyền vào, attribute
+			[Product]</description>
+		<attribute>
+			<name>productId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>getRowsOfListProducts</name>
+		<tag-class>poly.manhnd.assignment.tags.products.TestProductTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Trả về một LinkedHashMap</description>
+		<attribute>
+			<name>maxResult</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>int</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>getLastestProduct</name>
+		<tag-class>poly.manhnd.assignment.tags.products.LatestProductTag</tag-class>
+		<body-content>empty</body-content>
+		<description>Lấy về sản phẩm mới nhất [LatestProduct]</description>
+	</tag>
+
+	<!-- End Product tags -->
+</taglib> 

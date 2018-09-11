@@ -1,0 +1,45 @@
+.mainPage {
+	min-height: 500px;
+}
+
+.hr-title-footer {
+	width: 90%;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #BDBDBD;
+}
+
+.slideshow {
+	background-color: #333;
+}
+
+.content-footer {
+	padding: 2px;
+	margin: 5px;
+}
+
+.product-background {
+	padding: 10px;
+}
+
+.shopping-cart {
+	position: fixed;
+	bottom: 100px;
+	right: 10px;
+}
+
+.body-register-page {
+	height: 100%;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+}
+
